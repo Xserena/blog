@@ -143,6 +143,7 @@
   <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
+    <a href="https://github.com/Xserena" target="_Blank" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -300,64 +301,19 @@
       
         
           
-            <h1 id="标配：Node环境及Git"><a href="#标配：Node环境及Git" class="headerlink" title="标配：Node环境及Git"></a>标配：Node环境及Git</h1><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>安装好node.js和git后，可以通过npm来安装Hexo。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+          标配：Node环境及Git安装Hexo安装好node.js和git后，可以通过npm来安装Hexo。
+1$ npm install -g hexo-cli
 
-<h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>小编准备把我的代码放到一个叫“blog”的文件夹里（注意：npm太慢的话，就用yarn好了）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="站内内容"><a href="#站内内容" class="headerlink" title="站内内容"></a>站内内容</h3><p>新建好的文件夹目录如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<p>config.yml:博客的配置文件，博客的名称、关键词、作者、语言、博客主题…设置都在里面。<br>package.json:应用程序信息，新添加的插件内容也会出现在这里面，我们可以不修改这里的内容。<br>scaffolds:caffolds就是脚手架的意思，这里放了三个模板文件，分别是新添加博客文章（posts）、新添加博客页（page）和新添加草稿（draft）的目标样式。<br>source:ource是放置我们博客内容的地方，里面初始只有两个文件夹，一个是drafts（草稿），一个posts（文章），但之后我们通过命令新建tags（标签）还有categories（分类）页后，这里会相应地增加文件夹。<br>themes:放置主题文件包的地方。Hexo会根据这个文件来生成静态页面。初始状态下只有landscape一个文件夹，后续我们可以添加自己喜欢的。</p>
-<h3 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a>Hexo命令</h3><p>新建一个网站。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-
-<p>新建文章或页面。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"title"</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态页面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>也可以简写成</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p>将内容部署到网站</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>也可以简写成</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>发布内容，实际上是将内容从drafts（草稿）文件夹移到posts（文章）文件夹。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish &lt;layout&gt; &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>启动服务器，默认情况下，访问网站为<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>也可以简写成</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>搭建好后我们在localhost:4000就可以看到这样的博客内容：<br><img src="/blog/2019/06/29/next/1.jpg" alt="img"></p>
-<h3 id="GitHub创建一个新仓库，名为blog"><a href="#GitHub创建一个新仓库，名为blog" class="headerlink" title="GitHub创建一个新仓库，名为blog"></a>GitHub创建一个新仓库，名为blog</h3><p><img src="/blog/2019/06/29/next/2.png" alt="img"><br><img src="/blog/2019/06/29/next/3.png" alt="img"></p>
-<h3 id="NexT主题配置"><a href="#NexT主题配置" class="headerlink" title="NexT主题配置"></a>NexT主题配置</h3><p>在终端打开blog文件夹，执行以下命令下载next主题</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br><span class="line">``` </span><br><span class="line">打开站点配置文件， 找到 theme 字段，并将其值更改为 next。</span><br><span class="line">![img](4.png)</span><br><span class="line">``` bash</span><br><span class="line">theme: next</span><br><span class="line">``` </span><br><span class="line">设置语言：打开站点配置文件，将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下：</span><br><span class="line">``` bash</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
-
-<p>运行Hexo命令 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>在网页中输入<a href="http://localhost:4000/，就看到以下模版了" target="_blank" rel="noopener">http://localhost:4000/，就看到以下模版了</a><br><img src="/blog/2019/06/29/next/5.png" alt="img"></p>
-<h3 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h3><p>打开站点配置文件，修改以下内容：<br><img src="/blog/2019/06/29/next/6.png" alt="img"><br><img src="/blog/2019/06/29/next/7.png" alt="img"></p>
-<p>运行Hexo命令 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>如果提示找不到git命令，就运行下面的代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>查看github仓库，已经有commit记录<br><img src="/blog/2019/06/29/next/8.png" alt="img"><br>打开网址，已经生成了网页<br><img src="/blog/2019/06/29/next/9.png" alt="img"></p>
-
-          
+建站小编准备把我的代码放到一个叫“blog”的文件夹里（注意：npm太慢的话，就用yarn好了）
+123$ hexo init &lt;fol
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2019/06/29/next/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -475,18 +431,20 @@
       
         
           
-            <!-- <img src="/blog/2019/06/28/demo/cosmos.png" title="this"> -->
-<!-- ![img](cosmos.png) -->
-<p><font color="#87CEFA" size="5">Cosmos</font><br>一个区块链网络</p>
-<p><font color="#87CEFA" size="5">Cosmos Hub</font><br>Cosmos网络的第一个区块链，该Hub将连接到许多其他区块链，Hub可以看作是这些区块链的轻客户端。这将使得跨链之间的代币能通过Hub进行转移。</p>
-<p><font color="#87CEFA" size="5">代币</font><br>Atom</p>
-<p><font color="#87CEFA" size="5">参与出块机制</font><br>Pos算法(权益证明，Proof-of-Stake)，参与出块的节点选择是根据不同节点的股份和时间进行随机选择的。     <a href="https://blog.csdn.net/niyuelin1990/article/details/79880132" target="_blank" rel="noopener">概念</a></p>
-<p><font color="#87CEFA" size="5">validator</font><br>validator通过验证和交易，提出、核实和确认区块来确保Cosmos Hub的安全。validator可以抵押自己的Atom或接受其他Atom持有者的委托。validator在区块链中提交新块并获得收入以换取他们的工作。他们还必须通过对提案进行投票来参与治理。</p>
-<p><font color="#87CEFA" size="5">delegator</font><br>Atom主要持有者，delegator通过委托Atom来保护Cosmos网络的安全。抵押Atom时没有最小数量的要求。具体的途径是他们通过选择委托给一个或多个validator，validator将获得delegator的投票权重。     <a href="https://hub.cosmos.network/docs/validators/validator-faq.html" target="_blank" rel="noopener">相关文档</a></p>
-<p><font color="#87CEFA" size="5">收益来源</font><br>1.出块增发奖励(Atom)<br>2.区块奖励(Photon)<br>3.交易费用(Atom)<br><a href="https://github.com/cosmos/cosmos-sdk/blob/master/docs/spec/mint/03_begin_block.md#blockprovision" target="_blank" rel="noopener">出块奖励计算相关连接</a></p>
-<p><img src="/blog/2019/06/28/demo/1.png" alt="img"><br><img src="/blog/2019/06/28/demo/cosmos.png" alt="img"></p>
+           -->
 
-          
+Cosmos一个区块链网络
+Cosmos HubCosmos网络的第一个区块链，该Hub将连接到许多其他区块链，Hub可以看作是这些区块链的轻客户端。这将使得跨链之间的代币能通过Hub进行转移。
+代币Atom
+参与出块机制Pos算法(权益证明，Proof-of-Stake)，参与出块的节
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2019/06/28/demo/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -604,21 +562,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2019/06/28/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -763,6 +715,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>  访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
