@@ -230,6 +230,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xserena.github.io/blog/2018/09/23/CSS清除浮动/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Serena">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/09/23/CSS清除浮动/" itemprop="url">CSS清除浮动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T10:08:41+08:00">
+                2018-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3>未清除浮动时：</h3><h3>代码</h3><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #cd2828; font-weight: bold">&lt;!DOCTYPE html&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">&lt;html&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span> <span style="color: #6ab825; font-weight: bold">&lt;head&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span>     <span style="color: #6ab825; font-weight: bold">&lt;meta</span> <span style="color: #bbbbbb">charset=</span><span style="color: #ed9d13">&quot;utf-8&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>     <span style="color: #6ab825; font-weight: bold">&lt;title&gt;&lt;/title&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>     <span style="color: #6ab825; font-weight: bold">&lt;style </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/css&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>         <span style="color: #447fcf; text-decoration: underline">.box</span><span style="color: #d0d0d0">{</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>             <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">600px</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>             <span style="color: #6ab825; font-weight: bold">border</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">2px</span> <span style="color: #6ab825; font-weight: bold">solid</span> <span style="color: #24909d">red</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">10</span>         <span style="color: #d0d0d0">}</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">11</span>         <span style="color: #447fcf; text-decoration: underline">.d1</span><span style="color: #d0d0d0">{</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">12</span>             <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">100px</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">13</span>             <span style="color: #6ab825; font-weight: bold">height</span><span style="color: #d0d0d0">:</span><span style="color: #3677a9">100px</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">14</span>             <span style="color: #6ab825; font-weight: bold">background-color</span><span style="color: #d0d0d0">:</span> <span style="color: #24909d">blue</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">15</span>             <span style="color: #6ab825; font-weight: bold">float</span><span style="color: #d0d0d0">:</span> <span style="color: #6ab825; font-weight: bold">left</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         <span style="color: #d0d0d0">}</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">17</span>         <span style="color: #447fcf; text-decoration: underline">.d2</span><span style="color: #d0d0d0">{</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">18</span>             <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">100px</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">19</span>             <span style="color: #6ab825; font-weight: bold">height</span><span style="color: #d0d0d0">:</span><span style="color: #3677a9">100px</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">20</span>             <span style="color: #6ab825; font-weight: bold">background-color</span><span style="color: #d0d0d0">:</span> <span style="color: #24909d">green</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">21</span>             <span style="color: #6ab825; font-weight: bold">float</span><span style="color: #d0d0d0">:</span> <span style="color: #6ab825; font-weight: bold">right</span><span style="color: #d0d0d0">;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">22</span>         <span style="color: #d0d0d0">}</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">23</span> 
+<span style="background-color: #202020; padding: 0 5px 0 5px">24</span>     <span style="color: #6ab825; font-weight: bold">&lt;/style&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">25</span> <span style="color: #6ab825; font-weight: bold">&lt;/head&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">26</span> <span style="color: #6ab825; font-weight: bold">&lt;body&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">27</span>     <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">class=</span><span style="color: #ed9d13">&quot;box clearfix&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">28</span>         <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">class=</span><span style="color: #ed9d13">&quot;d1&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/div&gt;</span>      
+<span style="background-color: #202020; padding: 0 5px 0 5px">29</span>         <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">class=</span><span style="color: #ed9d13">&quot;d2&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/div&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">30</span>     <span style="color: #6ab825; font-weight: bold">&lt;/div&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">31</span> <span style="color: #6ab825; font-weight: bold">&lt;/body&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">32</span> <span style="color: #6ab825; font-weight: bold">&lt;/html&gt;</span>
+</pre></div>
+</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2018/09/23/CSS清除浮动/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xserena.github.io/blog/2018/09/02/二千炸鸡店-vueCli/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1272,7 +1429,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
