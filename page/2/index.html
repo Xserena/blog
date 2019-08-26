@@ -230,6 +230,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xserena.github.io/blog/2018/09/24/post及get请求区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Serena">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/09/24/post及get请求区别/" itemprop="url">post及get请求区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T12:39:46+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2>1.ajax-get请求</h2><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/javascript&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">ajax(){</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span>     <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">XHR=</span><span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span> 
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>     <span style="color: #999999; font-style: italic">//第一步：创建XMLHttpRequest对象</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>     <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.XMLHttpRequest)</span> <span style="color: #d0d0d0">{</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">XMLHttpRequest();</span>  <span style="color: #999999; font-style: italic">// 非IE内核:IE7+, Firefox, Chrome, Opera, Safari  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.ActiveXObject)</span> <span style="color: #d0d0d0">{</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">ActiveXObject(</span><span style="color: #ed9d13">&quot;Microsoft.XMLHTTP&quot;</span><span style="color: #d0d0d0">);</span>   <span style="color: #999999; font-style: italic">// IE内核:IE6, IE5</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">10</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #d0d0d0">{</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">11</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">12</span>     <span style="color: #d0d0d0">}</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">13</span> 
+<span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     <span style="color: #999999; font-style: italic">//第二步：发送请求</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">15</span>     <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(XHR){</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         <span style="color: #d0d0d0">XHR.open(</span><span style="color: #ed9d13">&quot;GET&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&quot;/test/ajax&quot;</span><span style="color: #d0d0d0">);</span>  <span style="color: #999999; font-style: italic">//&quot;/test/ajax&quot;test为项目名称、ajax为方法名称</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">17</span> 
+<span style="background-color: #202020; padding: 0 5px 0 5px">18</span>     <span style="color: #999999; font-style: italic">//第三步：</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">19</span>         <span style="color: #d0d0d0">XHR.onreadystatechange</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span> 
+<span style="background-color: #202020; padding: 0 5px 0 5px">20</span>             <span style="color: #999999; font-style: italic">// readyState值说明  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">21</span>             <span style="color: #999999; font-style: italic">// 0,初始化,XHR对象已经创建,还未执行open  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">22</span>             <span style="color: #999999; font-style: italic">// 1,载入,已经调用open方法,但是还没发送请求  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">23</span>             <span style="color: #999999; font-style: italic">// 2,载入完成,请求已经发送完成  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">24</span>             <span style="color: #999999; font-style: italic">// 3,交互,可以接收到部分数据,因为相应及http头不全，这时通过responseText获取部分数据会出现错误  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">25</span>             <span style="color: #999999; font-style: italic">// 4,数据接收完成，此时可以通过responseText获取完整的数据</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">26</span> 
+<span style="background-color: #202020; padding: 0 5px 0 5px">27</span>             <span style="color: #999999; font-style: italic">// status值说明  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">28</span>             <span style="color: #999999; font-style: italic">// 200:成功  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">29</span>             <span style="color: #999999; font-style: italic">// 404:没有发现文件、查询或URl  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">30</span>             <span style="color: #999999; font-style: italic">// 500:服务器产生内部错误  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">31</span>             <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(XHR.readyState</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">4</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">XHR.status</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">200</span><span style="color: #d0d0d0">)</span> <span style="color: #d0d0d0">{</span>  <span style="color: #999999; font-style: italic">//注①</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">32</span>                 <span style="color: #999999; font-style: italic">// 这里可以对返回的内容做处理  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">33</span>                 <span style="color: #999999; font-style: italic">// 一般会返回JSON或XML数据格式  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">34</span>                 <span style="color: #d0d0d0">console.log(</span><span style="color: #ed9d13">&quot;XHR.responseText--&gt;&quot;</span><span style="color: #d0d0d0">+XHR.responseText);</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">35</span>                 <span style="color: #999999; font-style: italic">// 主动释放,JS本身也会回收的  </span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">36</span>                 <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">37</span>             <span style="color: #d0d0d0">}</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">38</span>         <span style="color: #d0d0d0">};</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">39</span>         <span style="color: #d0d0d0">XHR.send();</span>  
+<span style="background-color: #202020; padding: 0 5px 0 5px">40</span>     <span style="color: #d0d0d0">}</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">41</span> <span style="color: #d0d0d0">}</span>
+<span style="background-color: #202020; padding: 0 5px 0 5px">42</span> <span style="color: #6ab825; font-weight: bold">&lt;/script&gt;</span>
+</pre></div>
+</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2018/09/24/post及get请求区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xserena.github.io/blog/2018/09/23/CSS居中设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1376,138 +1543,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xserena.github.io/blog/2018/08/18/Hexo-Github搭建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Serena">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MyBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/08/18/Hexo-Github搭建博客/" itemprop="url">Hexo+Github搭建博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T23:16:02+08:00">
-                2018-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <br>
-<h2>1.安装Node.js和配置好Node.js环境，可以打开cmd查看配置情况</h2>
-
-<p><img src="/blog/2018/08/18/Hexo-Github搭建博客/node-npm.png" alt="安装Node.js和配置好Node.js环境，可以打开cmd查看配置情况"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/08/18/Hexo-Github搭建博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1553,7 +1593,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
